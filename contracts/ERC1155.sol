@@ -5,6 +5,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/access/AccessControl.sol";
 import "./ERC1155URIStorage.sol";
 
+//ERC1155 contract use for metaverse objects
 contract Objects is AccessControl, Ownable, ERC115URIStorage {
 
     bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
