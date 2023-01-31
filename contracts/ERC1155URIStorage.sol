@@ -11,7 +11,7 @@ abstract contract ERC115URIStorage is ERC1155 {
     mapping(uint256 => string) private _tokenURIs;
     mapping(uint256 => uint256) public supply;
 
-    string private _uri;
+    string private _uri = "";
 
     string private uriSuffix = ".json";
 

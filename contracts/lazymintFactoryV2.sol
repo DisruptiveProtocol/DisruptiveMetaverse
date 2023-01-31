@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.9;
 
-import "../AccessControl.sol";
+import "@openzeppelin/contracts/access/AccessControl.sol";
 import "./NFTWMisteryBox.sol";
 
 contract lazymintFactoryV2 is AccessControl {
@@ -43,7 +43,7 @@ contract lazymintFactoryV2 is AccessControl {
         if (_name != address(0)) {
             revert ("collection exists");
         } 
-        LazyNFT lazynft = new LazyNFT(managerMint, managerTB, market, _maxsupply,name_,symbol_,_token,_amount,_mintBox,_date,owner);
+        NFTWMistery lazynft = new NFTWMistery(managerMint, managerTB, market, _maxsupply,name_,symbol_,_token,_amount,_mintBox,_date,owner);
         collections[name_] = address(lazynft);
         emit contractcreated(address(lazynft), msg.sender);
         return address(lazynft);
